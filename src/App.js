@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createTheme, ThemeProvider, Button } from '@mui/material';
+import { createTheme, ThemeProvider, Button, Checkbox } from '@mui/material';
 import './App.css';
 
 const theme = createTheme({
@@ -8,6 +8,7 @@ const theme = createTheme({
 
 function FutSegundaHome() {
   const [loading, setLoading] = useState(false);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
   const [times, setTimes] = useState([]);
   const [mediasTimes, setMediasTimes] = useState([]);
 
@@ -30,14 +31,13 @@ function FutSegundaHome() {
     { nome: 'Diego', nota: 8.6, posicao: 'Atacante' },
     { nome: 'Eduardo', nota: 7, posicao: 'Meio' },
     { nome: 'Nivo', nota: 6.5, posicao: 'Zagueiro' },
-
-    //{nome: "Diego Bodybuilder", nota: 7.5, posicao: "Meio"},
-    //{nome: "Willian", nota: 7, posicao: "Lateral"},
-    //{nome: "Joffe", nota: 8.6, posicao: "Atacante"},
-    //{nome: "Dan ", nota: 7, posicao: "Meia"},
-    //{nome: "Jose", nota: 6.5, posicao: "Meia"},
-    //{nome: "Marlon", nota: 7.0, posicao: "Meio"},
-    // {nome: "Ajair", nota: 7.25, posicao: "Meia"},
+    { nome: 'Diego Bodybuilder', nota: 7.5, posicao: 'Meio' },
+    { nome: 'Willian', nota: 7, posicao: 'Lateral' },
+    { nome: 'Joffe', nota: 8.6, posicao: 'Atacante' },
+    { nome: 'Dan ', nota: 7, posicao: 'Meia' },
+    { nome: 'Jose', nota: 6.5, posicao: 'Meia' },
+    { nome: 'Marlon', nota: 7.0, posicao: 'Meio' },
+    { nome: 'Ajair', nota: 7.25, posicao: 'Meia' },
   ];
 
   function shuffleArray(array) {
@@ -89,8 +89,19 @@ function FutSegundaHome() {
     return medias;
   }
 
+  function handlePlayerCheckboxChange(player) {
+    setSelectedPlayers((prevSelectedPlayers) =>
+      prevSelectedPlayers.includes(player)
+        ? prevSelectedPlayers.filter((p) => p !== player)
+        : [...prevSelectedPlayers, player]
+    );
+  }
+
   function handleTeamButton() {
-    const dividedTimes = dividirJogadores(jogadores, 3);
+    const selectedJogadores = jogadores.filter((jogador) =>
+      selectedPlayers.includes(jogador.nome)
+    );
+    const dividedTimes = dividirJogadores(selectedJogadores, 3);
     setTimes(dividedTimes);
     const medias = calcularMediaTimes(dividedTimes);
     setMediasTimes(medias);
@@ -98,27 +109,40 @@ function FutSegundaHome() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <div className="container-global">
-          <div className="left">
-            {loading && (
-              <div className="loader-container">
-                <div className="spinner"></div>
-              </div>
-            )}
-            {/* <ParticlesContainer /> */}
-            <Button onClick={handleTeamButton}>Sortear times</Button>
-          </div>
+      <div className="container-global">
+        <div className="left">
+          {loading && (
+            <div className="loader-container">
+              <div className="spinner"></div>
+            </div>
+          )}
+          <Button onClick={handleTeamButton}>Sortear times</Button>
 
+          <ul className="players-list">
+            {jogadores.map((jogador) => (
+              <li key={jogador.nome}>
+                <Checkbox
+                  checked={selectedPlayers.includes(jogador.nome)}
+                  onChange={() => handlePlayerCheckboxChange(jogador.nome)}
+                />
+                <span className="player-info">
+                  <strong>Nome:</strong> {jogador.nome},{' '}
+                  <strong>Posição:</strong> {jogador.posicao}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="right">
           {times.length > 0 && (
-            <ul>
+            <ul className="teams-list">
               {times.map((time, index) => (
                 <li key={index}>
                   <strong>Time {index + 1}:</strong>
                   {time.map((jogador, jogadorIndex) => (
                     <p key={jogadorIndex}>
-                      Nome: {jogador.nome}, Nota: {jogador.nota}, Posição:{' '}
-                      {jogador.posicao}
+                      Nome: {jogador.nome}, Posição: {jogador.posicao}
                     </p>
                   ))}
                   Média: {mediasTimes[index]}
