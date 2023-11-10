@@ -58,16 +58,6 @@ body {
   box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
 }
 
-.leftbox {
-  top: -5%;
-  left: 5%;
-  position: absolute;
-  width: 15%;
-  height: 110%;
-  background-color: #672b9c;
-  box-shadow: 3px 3px 15px rgba(119, 119, 119, 0.5);
-}
-
 nav {
   margin: 4em auto;
   margin-left: -5px;
@@ -80,11 +70,6 @@ nav a {
   font-size: 1.1em;
   display: block;
   transition: all 0.5s ease-in-out;
-}
-
-.rightbox {
-  padding: 0em 34rem 0em 0em;
-  height: 100%;
 }
 
 .rb-container {
@@ -183,26 +168,6 @@ input::placeholder {
 .container-global {
   z-index: 999;
   display: flex;
-}
-
-.left {
-  width: 60%;
-  height: 100vh;
-}
-
-.right {
-  margin-top: 5%;
-  width: 40%;
-  height: 100vh;
-}
-
-.left {
-  margin-top: 3%;
-  z-index: 999;
-}
-
-.right {
-  z-index: 9999;
 }
 
 .roadmap {
