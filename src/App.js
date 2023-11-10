@@ -13,11 +13,11 @@ function FutSegundaHome() {
   const [mediasTimes, setMediasTimes] = useState([]);
 
   const jogadores = [
-    { nome: 'Dudu', nota: 7.0, posicao: 'Lateral' },
-    { nome: 'Maylon', nota: 8.03, posicao: 'Lateral' },
+    { nome: 'Dudu', nota: 7.3, posicao: 'Lateral' },
+    { nome: 'Maylon', nota: 8.0, posicao: 'Lateral' },
     { nome: 'Thibes', nota: 6.0, posicao: 'Meia' },
     { nome: 'João', nota: 6.0, posicao: 'Lateral' },
-    { nome: 'Salazar', nota: 7, posicao: 'Atacante' },
+    { nome: 'Salazar', nota: 7.3, posicao: 'Zagueiro' },
     { nome: 'Perdigão', nota: 8.3, posicao: 'Meia' },
     { nome: 'Vinicius', nota: 6.5, posicao: 'Zagueiro' },
     { nome: 'Matheus', nota: 6.5, posicao: 'Zagueiro' },
@@ -25,7 +25,6 @@ function FutSegundaHome() {
     { nome: 'Gabriel F', nota: 7.9, posicao: 'Zagueiro' },
     { nome: 'Alexandre F', nota: 7.0, posicao: 'Meia' },
     { nome: 'Cristian', nota: 8.7, posicao: 'Meia' },
-    { nome: 'Danilo', nota: 6.13, posicao: 'Lateral' },
     { nome: 'Rodrigo PB', nota: 8.0, posicao: 'Atacante' },
     { nome: 'DG', nota: 6.0, posicao: 'Lateral' },
     { nome: 'Diego', nota: 8.5, posicao: 'Atacante' },
@@ -33,16 +32,19 @@ function FutSegundaHome() {
     { nome: 'Nivo', nota: 6.5, posicao: 'Zagueiro' },
     { nome: 'Diego Bodybuilder', nota: 7.5, posicao: 'Meio' },
     { nome: 'Willian', nota: 7.0, posicao: 'Lateral' },
-    { nome: 'Joffe', nota: 8.0, posicao: 'Atacante' },
-    { nome: 'Dan ', nota: 7.0, posicao: 'Meia' },
+    { nome: 'Joffe', nota: 8.3, posicao: 'Atacante' },
     { nome: 'José', nota: 6.0, posicao: 'Meia' },
-    { nome: 'Marlon', nota: 7.0, posicao: 'Meio' },
+    { nome: 'Marlon', nota: 7.5, posicao: 'Meio' },
     { nome: 'Ajair', nota: 7.25, posicao: 'Meia' },
     { nome: 'Dan Grimm', nota: 7.0, posicao: 'Meia' },
     { nome: 'Alexandre (Amigo Cristian)', nota: 8.5, posicao: 'Meia' },
     { nome: 'Murilo (Amigo João)', nota: 6.7, posicao: 'Meia' },
     { nome: 'Diego (Amigo Perdigão)', nota: 7.5, posicao: 'Meia' },
     { nome: 'Tiago Almeida', nota: 7.8, posicao: 'Zagueiro' },
+    { nome: 'Filha Tiago', nota: 6.5, posicao: 'Atacante' },
+    { nome: 'Leandro', nota: 7.0, posicao: 'Meia' },
+    { nome: 'Fellipe Santos', nota: 7.0, posicao: 'Meia' },
+    { nome: 'Anderson', nota: 7.0, posicao: 'Atacante' },
   ];
 
   function shuffleArray(array) {
