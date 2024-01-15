@@ -14,7 +14,11 @@ function FutSegundaHome() {
 
   const jogadores = [
     { nome: 'Dudu', nota: 7.3, posicao: 'Lateral' },
+<<<<<<< HEAD
     { nome: 'Maylon', nota: 7.5, posicao: 'Lateral' },
+=======
+    { nome: 'Maylon', nota: 8.0, posicao: 'Lateral' },
+>>>>>>> c14576f2e8501b715b335cc1cf91cf5a8d580d18
     { nome: 'Thibes', nota: 6.0, posicao: 'Meia' },
     { nome: 'João', nota: 6.0, posicao: 'Lateral' },
     { nome: 'Salazar', nota: 7.3, posicao: 'Zagueiro' },
@@ -43,10 +47,15 @@ function FutSegundaHome() {
     { nome: 'Tiago Almeida', nota: 7.8, posicao: 'Zagueiro' },
     { nome: 'Filha Tiago', nota: 6.5, posicao: 'Atacante' },
     { nome: 'Leandro', nota: 7.0, posicao: 'Meia' },
+<<<<<<< HEAD
     { nome: 'Guilherme (Amigo Perdigão)', nota: 8.5, posicao: 'Meia' },
     { nome: 'Jeferson (Amigo Vinicius)', nota: 7.0, posicao: 'Meia' },
     { nome: 'Gustavo (Amigo Vinicius)', nota: 7.0, posicao: 'Meia' },
     { nome: 'Craque Erick', nota: 7.5, posicao: 'Meia' },
+=======
+    { nome: 'Fellipe Santos', nota: 7.0, posicao: 'Meia' },
+    { nome: 'Anderson', nota: 7.0, posicao: 'Atacante' },
+>>>>>>> c14576f2e8501b715b335cc1cf91cf5a8d580d18
   ];
 
   function shuffleArray(array) {
